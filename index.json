@@ -22,5 +22,11 @@
     "title": "Question with Image",
     "description": "this is image preview",
     "path": "patterns/question-with-image"
+  },
+  {
+    "id": "this-is-submit-check",
+    "title": "this is submit check",
+    "description": "this is submit check",
+    "path": "patterns/this-is-submit-check"
   }
 ]
