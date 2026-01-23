@@ -1,0 +1,7 @@
+{
+  "id": "sample-single-grid",
+  "title": "Sample Single Select Grid with Other",
+  "description": "Example grid question with Other option",
+  "tags": ["single select grid", "other"],
+  "question_types": ["Single Grid with Other"]
+}
