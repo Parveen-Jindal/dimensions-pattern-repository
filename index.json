@@ -16,5 +16,11 @@
     "title": "Country Question",
     "description": "This is country question.",
     "path": "patterns/country-question"
+  },
+  {
+    "id": "question-with-image",
+    "title": "Question with Image",
+    "description": "this is image preview",
+    "path": "patterns/question-with-image"
   }
 ]
