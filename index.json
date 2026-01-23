@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": "sample-single-grid",
+    "title": "Sample Single Select Grid with Other",
+    "description": "Example grid question with Other option",
+    "path": "patterns/sample-single-grid"
+  }
+]
