@@ -10,5 +10,11 @@
     "title": "Q1",
     "description": "this is Grid Question",
     "path": "patterns/q1"
+  },
+  {
+    "id": "country-question",
+    "title": "Country Question",
+    "description": "This is country question.",
+    "path": "patterns/country-question"
   }
 ]
