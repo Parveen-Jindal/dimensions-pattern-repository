@@ -1,0 +1,2 @@
+ShowQuestionNo(IOM, "SUK02INC")
+SUK02INC.Ask()
