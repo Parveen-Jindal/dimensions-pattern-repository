@@ -22,5 +22,11 @@
     "title": "Question with Image",
     "description": "this is image preview",
     "path": "patterns/question-with-image"
+  },
+  {
+    "id": "this-is-repo",
+    "title": "this is repo",
+    "description": "sdfasdf",
+    "path": "patterns/this-is-repo"
   }
 ]
