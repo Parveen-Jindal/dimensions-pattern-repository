@@ -1,0 +1,8 @@
+ShowQuestionNo(IOM, "SCountry")
+SCountry.Ask()
+If (ContainsAny(SCountry,{None})) Then
+    MRK_QSCREEN = MRK_QSCREEN + {SCountry}
+    ShowTest(IOM, MRK_QSCREEN, "")
+    If ContainsAny(QSCREEN, {SQUIT}) Then QSCREEN.Response = {SCountry}
+    GoTo TERMINATE
+End If
