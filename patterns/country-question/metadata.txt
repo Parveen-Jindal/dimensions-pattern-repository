@@ -1,6 +1,0 @@
-SCountry "In which country do you live?<p/>(Please select one answer only)"
-    categorical[1..1]
-    {
-        United "United Kingdom", 
-        None "None of these"
-    };
