@@ -3,6 +3,17 @@
     "id": "grid-single-select-with-other-na",
     "title": "Grid Single Select with Other + NA",
     "description": "This is a Single Select Grid question with one Other box and one None option (Exclusive over the Grid)",
+    "tags": [
+      "single-select-grid",
+      "grid",
+      "single",
+      "other",
+      "na"
+    ],
+    "questionType": "Single select Grid",
+    "projectName": "NA",
+    "projectId": "NA",
+    "addedBy": "Parveen Jindal",
     "path": "patterns/grid-single-select-with-other-na"
   },
   {
@@ -15,6 +26,10 @@
       "numeric",
       "other"
     ],
+    "questionType": "Rank",
+    "projectName": "NA",
+    "projectId": "NA",
+    "addedBy": "Parveen Jindal",
     "path": "patterns/rank-to-5-options-with-other"
   },
   {
