@@ -1,0 +1,40 @@
+Grid_QB2 "How frequently, if at all, do you use mobile apps for any of the following" loop
+    {
+        Symptom "Symptom checking",
+        Exercise "Exercise and activity monitoring",
+        Monitoring "Monitoring health variables",
+        Patient "Patient support groups",
+        Forums "Forums",
+        Prescription "Prescription/ over-the-counter medicine orders",
+        Online "Online consultations",
+        Setting "Setting up health management related reminders",
+        Accessing "Accessing up-to-date information on healthcare and treatment",
+        QB2_Other_Specify "Other (please specify) <div id='oth1'></div>" fix
+    } fields -
+    (
+        QB2_1 ""
+        categorical [1..1]
+        {
+            Daily "Daily",
+            Weekly "Weekly",
+            Monthly "Monthly",
+            LessThanMonthly "Less often than monthly ",
+            Never "Never",
+            IDontDoThis "Don’t know"
+        };
+
+    ) expand grid;
+
+    OTH_QB2_Other_Specify "<!---->"
+        style(
+            Control(
+                Type = "SingleLineEdit"
+            )
+        )
+    text;
+
+    QB2_Na ""
+    categorical
+    {
+        Mobile "I don’t use mobile apps for health management at all."
+    };

@@ -22,5 +22,11 @@
     "title": "Question with Image",
     "description": "this is image preview",
     "path": "patterns/question-with-image"
+  },
+  {
+    "id": "grid-single-select-with-other-na",
+    "title": "Grid Single Select with Other + NA",
+    "description": "This is a Single Select Grid question with one Other box and one None option (Exclusive over the Grid)",
+    "path": "patterns/grid-single-select-with-other-na"
   }
 ]
