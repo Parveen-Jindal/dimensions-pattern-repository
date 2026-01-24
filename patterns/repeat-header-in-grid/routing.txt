@@ -1,0 +1,3 @@
+GRID_A21.Style.Cell.RepeatHeader = 11
+ShowQuestionNo(IOM,"A21")
+GRID_A21.ask()

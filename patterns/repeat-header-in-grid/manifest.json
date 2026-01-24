@@ -1,0 +1,6 @@
+{
+  "id": "repeat-header-in-grid",
+  "title": "Repeat Header in Grid",
+  "description": "Repeating the header if there are too many options(Responses) in the Grid Question.",
+  "hasPreview": false
+}

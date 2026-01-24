@@ -1,0 +1,38 @@
+GRID_A21 "In terms of vaccine storage and stock management, what are the biggest challenges you would like to solve in each of the following scenarios?<br/>
+<i>Please select up to three challenges for each scenario. </i>"
+    loop
+    {
+        Seasonal "Seasonal vaccines",
+        TravelV "Travel vaccines",
+        Paediatr "Paediatric vaccines",
+        Adolesce "Adolescent vaccines"
+    } ran fields -
+    (
+        A21_1 ""
+        categorical [1..3]
+        {
+            TakesToo "Takes too much time",
+            TakesTooM "Takes too many members of staff",
+            Inaccurate "Inaccurate data on stock levels",
+            Counterfe "Counterfeit doses",
+            LimitedVi "Limited visibility of stock",
+            ManualDoc "Manual documentation",
+            ManagingS "Managing storage space",
+            Reorderin "Re-ordering process",
+            Overstoc "Overstocking",
+            MissedA "Missed appointments",
+            LackOfEx "Lack of expertise",
+            PoorComm "Poor communication",
+            Inadequa "Inadequate software",
+            Maintaini "Maintaining correct temperature/ cold chain break",
+            Monitorin "Monitoring expiration date",
+            OrderingD "Ordering delays",
+            VaccinesBei "Vaccines being out of stock from you desired manufacturer",
+            DeliveryD "Delivery delays",
+            RecordingO "Recording of vaccination information into patient charts/files",
+            OtherPleas "Other, please specify" other fix,
+            IDontFaceA "I don’t face any challenges when managing vaccine stocks" DK,
+            ThisTypeOf "This type of vaccine is not applicable in my practice" NA
+        } ran;
+
+    ) column expand grid;
