@@ -1,0 +1,29 @@
+ShowQuestionNo(IOM,"QA10")
+GRID_A10[..].MustAnswer=false
+GRID_A10[{QA10_Other_Specify}].A10_1.MustAnswer = False
+OTH_QA10_Other_Specify.MustAnswer = False
+GRID_A10.Banners.AddNew("jsOther","<script type=""text/javascript""> $(document).ready(function()&#123; $('#oth1').html($('input[name=_Qpage__QA10_QOTH__QA10__Other__Specify]').detach());&#125;)</script>")
+GRID_A10.Validation.Function = "RankA10"
+page_QA10.ask()
+
+Function RankA10(Question, IOM, Attempt)
+	dim iter, Tot
+	For each iter in Question.Categories
+	   Tot = Tot + Question[iter].A10_1.Response
+	Next
+	if CheckRank(Question,"A10_1",5,"","",false,iom) = true then
+		Question.Errors.Clear()
+		IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 5
+		Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+        RankA10 = false
+		Exit function
+	ElseIf (Question[{QA10_Other_Specify}].A10_1.Response.Value) > 0 And IsEmpty(IOM.Questions["OTH_QA10_Other_Specify"]) Then
+		Question.Errors.AddNew("ERR13", IOM.Questions.hCustomMsgs.Categories.ERR13.Label)
+		RankA10 = False
+		Exit function
+	ElseIf (Question[{QA10_Other_Specify}].A10_1.Response.Value) = 0 And Not(IsEmpty(IOM.Questions["OTH_QA10_Other_Specify"])) Then
+		Question.Errors.AddNew("ERR14", IOM.Questions.hCustomMsgs.Categories.ERR14.Label)
+		RankA10 = False
+		Exit function
+	End If
+End Function
