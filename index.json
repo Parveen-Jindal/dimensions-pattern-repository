@@ -16,5 +16,20 @@
       "other"
     ],
     "path": "patterns/rank-to-5-options-with-other"
+  },
+  {
+    "id": "repeat-header-in-grid",
+    "title": "Repeat Header in Grid",
+    "description": "Repeating the header if there are too many options(Responses) in the Grid Question.",
+    "tags": [
+      "repeat-header",
+      "grid",
+      "header-repeating"
+    ],
+    "questionType": "Single select Grid",
+    "projectName": "NA",
+    "projectId": "NA",
+    "addedBy": "Parveen Jindal",
+    "path": "patterns/repeat-header-in-grid"
   }
 ]
