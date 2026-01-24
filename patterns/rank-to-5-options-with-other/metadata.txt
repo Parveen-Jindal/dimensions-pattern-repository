@@ -1,0 +1,22 @@
+GRID_A10 "Of the factors listed below, please can you rank them in order of how <b>time-consuming</b> they are when it comes to vaccine stock management?  Please assign rank 1 to the factor that is most time consuming, rank 2 to the factor that is second most time consuming and so on. " loop
+    {
+        use A10LIST -,
+        QA10_Other_Specify "Other (please specify)<div id='oth1'></div>" fix        
+    } ran fields -
+    (
+        A10_1 ""
+        long [1 .. 5]
+        codes(
+        {
+            No "" NA
+        } );
+        
+    ) expand grid;
+
+    OTH_QA10_Other_Specify "<!--Stores Other (specify) from GRID_A10-->"
+        style(
+            Control(
+                Type = "SingleLineEdit"
+            )
+        )
+    text;
