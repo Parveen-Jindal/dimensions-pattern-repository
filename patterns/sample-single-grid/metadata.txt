@@ -1,5 +1,0 @@
-* Sample Metadata
-Q1 "Sample Grid Question"
-1 Yes
-2 No
-97 Other
