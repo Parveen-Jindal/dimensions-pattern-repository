@@ -22,5 +22,11 @@
     "title": "Question with Image",
     "description": "this is image preview",
     "path": "patterns/question-with-image"
+  },
+  {
+    "id": "dsdfsad",
+    "title": "dsdfsad",
+    "description": "sdfsadfasd",
+    "path": "patterns/dsdfsad"
   }
 ]
