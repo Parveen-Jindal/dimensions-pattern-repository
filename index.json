@@ -1,23 +1,5 @@
 [
   {
-    "id": "sample-single-grid",
-    "title": "Sample Single Select Grid with Other",
-    "description": "Example grid question with Other option",
-    "path": "patterns/sample-single-grid"
-  },
-  {
-    "id": "q1",
-    "title": "Q1",
-    "description": "this is Grid Question",
-    "path": "patterns/q1"
-  },
-  {
-    "id": "question-with-image",
-    "title": "Question with Image",
-    "description": "this is image preview",
-    "path": "patterns/question-with-image"
-  },
-  {
     "id": "grid-single-select-with-other-na",
     "title": "Grid Single Select with Other + NA",
     "description": "This is a Single Select Grid question with one Other box and one None option (Exclusive over the Grid)",
