@@ -4,5 +4,17 @@
     "title": "Grid Single Select with Other + NA",
     "description": "This is a Single Select Grid question with one Other box and one None option (Exclusive over the Grid)",
     "path": "patterns/grid-single-select-with-other-na"
+  },
+  {
+    "id": "rank-to-5-options-with-other",
+    "title": "Rank to 5 options with Other",
+    "description": "Question for Rank to 5 options with Other specify box",
+    "tags": [
+      "rank",
+      "grid",
+      "numeric",
+      "other"
+    ],
+    "path": "patterns/rank-to-5-options-with-other"
   }
 ]
