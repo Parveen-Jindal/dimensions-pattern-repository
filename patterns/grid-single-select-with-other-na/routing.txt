@@ -1,0 +1,45 @@
+ShowQuestionNo(IOM,"QB2")
+Dim cat
+OTH_QB2_Other_Specify.MustAnswer = False
+
+For Each Cat In Grid_QB2.Categories
+		Grid_QB2[Cat].QB2_1.Validation.MinValue = 0
+		Grid_QB2[Cat].QB2_1.MustAnswer = False
+		Grid_QB2[Cat].QB2_1.Categories[..].Style.Control = ControlTypes.ctRadioButton
+Next
+
+Grid_QB2.Banners.AddNew("jsOther","<script type=""text/javascript""> $(document).ready(function()&#123; $('#oth1').html($('input[name=_QPageQB2_QOTH__QB2__Other__Specify]').detach());&#125;)</script>")
+PageQB2.Grid_QB2.Validation.Function = "FnCheckQA6a"
+PageQB2.ask()
+
+Function FnCheckQA6a(Question,IOM,Attempt)
+
+	Dim OTH_QB2_Other_Specify
+	
+	Set OTH_QB2_Other_Specify = IOM.Questions["OTH_QB2_Other_Specify"]
+	
+	dim iter, Tot
+	Tot = 0
+	For each iter in Question.Categories
+	  Tot = Tot + AnswerCount(Question[iter].QB2_1.Response)
+	Next
+	If Tot>0 and (AnswerCount(IOM.Questions["QB2_Na"])>0) then
+		Question.Errors.AddNew("ERR39", IOM.Questions.hCustomMsgs.Categories.ERR39.Label)
+		FnCheckQA6a = false
+	End If
+	If Tot<9 and (AnswerCount(IOM.Questions["QB2_Na"])=0) then
+		Question.Errors.AddNew("ERR39", IOM.Questions.hCustomMsgs.Categories.ERR39.Label)
+		FnCheckQA6a = false
+	End If
+	
+		If AnswerCount(Question[{QB2_Other_Specify}].QB2_1) = 0 And Not IsEmpty(OTH_QB2_Other_Specify) Then
+			Question.Errors.AddNew("Error1",IOM.Questions["hCustomMsgs"].Categories.ERR14.Label)
+	        FnCheckQA6a = false
+	        exit function
+		 End If
+		If AnswerCount(Question[{QB2_Other_Specify}].QB2_1) > 0 And IsEmpty(OTH_QB2_Other_Specify) Then
+			Question.Errors.AddNew("Error1",IOM.Questions["hCustomMsgs"].Categories.ERR13.Label)
+	        FnCheckQA6a = false
+	        exit function
+		 End If
+End Function
