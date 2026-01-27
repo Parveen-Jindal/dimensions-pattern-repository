@@ -46,5 +46,20 @@
     "projectId": "NA",
     "addedBy": "Parveen Jindal",
     "path": "patterns/repeat-header-in-grid"
+  },
+  {
+    "id": "sdfasdf",
+    "title": "sdfasdf",
+    "description": "asdfas asdf asdf asd",
+    "tags": [
+      "asdsdf",
+      "sdfasd",
+      "sadfasdf"
+    ],
+    "questionType": "sdfasdf",
+    "projectName": "asdfasdf",
+    "projectId": "sadfasdf",
+    "addedBy": "Parveen Jindal",
+    "path": "patterns/sdfasdf"
   }
 ]
