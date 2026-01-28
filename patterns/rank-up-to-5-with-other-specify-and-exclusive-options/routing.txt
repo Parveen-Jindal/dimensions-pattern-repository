@@ -1,0 +1,97 @@
+ShowQuestionNo(IOM, "QC2")
+	
+	Grid_QC2[..].MustAnswer = false
+	QC2_Oth1.MustAnswer = false
+	
+	Grid_QC2.Banners.AddNew("jsOther","<script type=""text/javascript""> $(document).ready(function()&#123; $('#oth1').html($('input[name=_QQPageQC2_QQC2__Oth1]').detach());&#125;)</script>")
+	Grid_QC2.Validation.Function = "RankQC2"
+	
+	QPageQC2.Ask()
+
+Function RankQC2(Question, IOM, Attempt)
+	dim iter, Tot, Anscount
+	
+	Anscount = 0 
+	
+	For each iter in Question.Categories
+	  Tot = Tot + Question[iter].QC2.Response
+	  If Question[iter].QC2.Response > 0 then
+	  		Anscount = Anscount + 1
+	  End if
+	Next
+	
+	If Anscount = 0 AND AnswerCount(IOM.Questions["GRID_QC2_EXE"]) = 0 Then
+		Question.Errors.AddNew("ERR8", IOM.Questions.hCustomMsgs.Categories.ERR8.Label)
+		RankQC2 = False
+		Exit function	
+	End if
+	
+	If Anscount > 0 AND AnswerCount(IOM.Questions["GRID_QC2_EXE"]) > 0 Then
+		Question.Errors.AddNew("ERR41", IOM.Questions.hCustomMsgs.Categories.ERR41.Label)
+		RankQC2 = False
+		Exit function	
+	End if
+	
+	If Anscount= 1 then
+		if CheckRank(Question,"QC2",1,"","",false,iom) = true then
+			Question.Errors.Clear()
+			IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 1
+			Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+	        RankQC2 = false
+			Exit function
+		end if	
+		
+	Elseif Anscount = 2 then
+	
+		if CheckRank(Question,"QC2",2,"","",false,iom) = true then
+			Question.Errors.Clear()
+			IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 2
+			Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+	        RankQC2 = false
+			Exit function
+		end if	
+	
+	Elseif Anscount = 3 then
+	
+		if CheckRank(Question,"QC2",3,"","",false,iom) = true then
+			Question.Errors.Clear()
+			IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 3
+			Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+	        RankQC2 = false
+			Exit function
+		end if	
+		
+	Elseif Anscount = 4 then
+	
+		if CheckRank(Question,"QC2",4,"","",false,iom) = true then
+			Question.Errors.Clear()
+			IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 4
+			Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+	        RankQC2 = false
+			Exit function
+		end if	
+	
+	Elseif Anscount >= 5 then
+	
+		if CheckRank(Question,"QC2",5,"","",false,iom) = true then
+			Question.Errors.Clear()
+			IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label.Inserts["INS"].Text = 5
+			Question.Errors.AddNew("Errors",IOM.Questions["hCustomMsgs"].Categories.SYS_ERR_RNK.Label)
+	        RankQC2 = false
+			Exit function
+		end if	
+	End if
+		
+		
+	If (Question[{Others}].QC2.Response.Value) > 0 And IsEmpty(IOM.Questions["QC2_Oth1"]) Then
+		Question.Errors.AddNew("ERR13", IOM.Questions.hCustomMsgs.Categories.ERR13.Label)
+		RankQC2 = False
+		Exit function
+		
+	ElseIf (Question[{Others}].QC2.Response.Value) = 0 And Not(IsEmpty(IOM.Questions["QC2_Oth1"])) Then
+		Question.Errors.AddNew("ERR14", IOM.Questions.hCustomMsgs.Categories.ERR14.Label)
+		RankQC2 = False
+		Exit function
+	End If
+	
+ End Function
