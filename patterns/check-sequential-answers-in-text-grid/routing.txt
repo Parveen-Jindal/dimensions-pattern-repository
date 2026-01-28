@@ -1,0 +1,43 @@
+GridQA2.MustAnswer = false
+ShowQuestionNo(IOM,"GridQA2")
+GridQA2.Categories[..].Label.Style.Width = "20px"
+GridQA2[..].Label.Style.Width = "5px"
+GridQA2Page.GridQA2.Validation.Function = "FnCheckAWARE"
+GridQA2Page.ask()
+
+Function FnCheckAWARE(Question,IOM,Attempt)
+	
+	Dim Tot, iter, Count, nums, flag
+	
+		for each iter in Question.Categories
+			If not IsEmpty(Question[iter].QA2.Response) Then
+				Count = Count + 1
+			end if 
+		next
+		
+		If count > 0 And (AnswerCount(IOM.Questions["QA2_NA"])>0) Then
+			Question.Errors.AddNew("Error1",IOM.Questions["hCustomMsgs"].Categories.ERR34.Label)
+			FnCheckAWARE = false
+			exit function
+		End If
+		
+		If count = 0 And (AnswerCount(IOM.Questions["QA2_NA"])=0) Then
+			Question.Errors.AddNew("Error1",IOM.Questions["hCustomMsgs"].Categories.ERR8.Label)
+			FnCheckAWARE = false
+			exit function
+		End If
+		
+		
+		flag = 0
+		for nums = 0 to Question.Count - 2
+			If IsEmpty(Question[nums].Item[0].Response) AND NOT IsEmpty(Question[nums+1].Item[0].Response) Then
+				flag = 1
+			End if
+		next
+		
+		If flag = 1 then
+			Question.errors.addnew("ERR11", IOM.Questions["hCustomMsgs"].Categories.ERR11.label)
+			FnCheckAWARE = False
+			Exit function
+		end if
+ End Function
