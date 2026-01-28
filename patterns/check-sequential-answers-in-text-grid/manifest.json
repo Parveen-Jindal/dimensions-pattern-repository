@@ -1,0 +1,6 @@
+{
+  "id": "check-sequential-answers-in-text-grid",
+  "title": "Check Sequential answers in Text Grid",
+  "description": "This is to check if the answers are in sequence or not in a multi-text grid.",
+  "hasPreview": true
+}
