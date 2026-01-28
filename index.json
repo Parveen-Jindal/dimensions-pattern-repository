@@ -46,5 +46,20 @@
     "projectId": "NA",
     "addedBy": "Parveen Jindal",
     "path": "patterns/repeat-header-in-grid"
+  },
+  {
+    "id": "check-sequential-answers-in-text-grid",
+    "title": "Check Sequential answers in Text Grid",
+    "description": "This is to check if the answers are in sequence or not in a multi-text grid.",
+    "tags": [
+      "sequence",
+      "text-grid",
+      "10-box"
+    ],
+    "questionType": "Open Text Grid",
+    "projectName": "25-079327-01 Nucala COPD - Trelegy ATU",
+    "projectId": "UK2507932701",
+    "addedBy": "Vaibhav Bharambe",
+    "path": "patterns/check-sequential-answers-in-text-grid"
   }
 ]
