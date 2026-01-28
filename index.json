@@ -61,5 +61,19 @@
     "projectId": "UK2507932701",
     "addedBy": "Vaibhav Bharambe",
     "path": "patterns/check-sequential-answers-in-text-grid"
+  },
+  {
+    "id": "rank-up-to-5-with-other-specify-and-exclusive-options",
+    "title": "Rank up to 5 with other specify and exclusive options.",
+    "description": "Rank up to 5 Responses with other Specify Option and exclusive options in a Grid.",
+    "tags": [
+      "rank",
+      "upto-5"
+    ],
+    "questionType": "Ranking Grid",
+    "projectName": "25-079327-01 Nucala COPD - Trelegy ATU",
+    "projectId": "UK2507932701",
+    "addedBy": "Vaibhav Bharambe",
+    "path": "patterns/rank-up-to-5-with-other-specify-and-exclusive-options"
   }
 ]

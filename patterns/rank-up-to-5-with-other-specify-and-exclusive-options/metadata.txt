@@ -1,0 +1,53 @@
+Grid_QC2 "What do you think will be the <b>main barriers</b>, if any, to prescribing or recommending biologics to COPD patients once they are available and reimbursed?<p/><b>Please select and rank your top 5 barriers</b>, with 1 being the most important barrier and 5 being the fifth most important barrier." loop
+    {
+        LackofEst "The lack of established pathway for prescribing biologics in COPD",
+        Concerns "Patient concerns around using a biologic treatment",
+        Reluctance "Patient reluctance to self-inject",
+        LackofAde "Lack of adequate homecare provision",
+        LackofTime "Lack of time for HCPs to educate patients about biologics",
+        Self_inject "Lack of time for HCPs to teach patients how to self-inject biologics",
+        Capacity "Lack of capacity to offer biologic injection at hospital",
+        Testing "Lack of capacity for blood eosinophil testing",
+        Cost "Cost",
+        Lackofco "Lack of confidence/training for HCPs to teach patients how to self-inject biologics",
+        Abilityt "Ability to identify eligible patients",
+        Smokingc "Smoking cessation not initiated",
+        Others "Other, please specify<div id='oth1'></div>" fix
+    } ran fields -
+    (
+        QC2 ""
+            style(
+                Width = "2em"
+            )
+        long [1 .. 5]
+        codes(
+        {
+            _NA "" NA
+        } );
+
+    ) expand grid;
+
+    QC2_Oth1 "<!-- Stores first other for QC2 -->"
+        style(
+            Width = "6em",
+            Control(
+                Type = "SingleLineEdit"
+            )
+        )
+    text;
+
+    GRID_QC2_EXE ""
+    categorical
+    {
+        Barriers "I do not think there will be any barriers to prescribing or recommending biologics to COPD patients once they are available and reimbursed" fix exclusive,
+        Dontknow "Don’t know" fix exclusive
+    };
+
+QPageQC2 ""
+    page(
+        Grid_QC2,
+        QC2_Oth1,
+        GRID_QC2_EXE
+    );
+
+ERR41 "Either rank upto 5 barriers or select any option below.",
